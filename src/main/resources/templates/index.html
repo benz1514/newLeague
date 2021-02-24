@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กลับหน้า LEagueofLegeds</title>
+</head>
+<a href="/lol/create">อัพแพท</a>
+<body>
+    <table>
+        <tr>
+            <td>เลขไอเท็ม</td>
+            <td>ชื่อไอเท็ม</td>
+            <td>ความเสียหายที่ทำ</td>
+            <td>ชนิดไอเท็ม</td>
+            <td>ความสามารถ</td>
+            <td>ราคาที่ต้องจ่าย</td>
+            <td>แก้ไข |ลบ</td>
+        </tr>
+        <tr th:each="x:${z}">
+            <td>
+                <P th:text="${x.id}"></p>
+            </td>
+            <td>
+                <p th:text="${x.itemname}"></p>
+            </td>
+            <td>
+                <p th:text="${x.damageitem}"></p>
+            </td>
+            <td>
+                <P th:text="${x.categoryitem}"></p>
+            </td>
+            <td>
+                <p th:text="${x.ablityitem}"></p>
+            </td>
+            <td>
+                <p th:text="${x.price}"></p>
+            </td>
+            <td>
+                <a th:href="  '/lol/edit?id=' + ${ x.id } ">edit</a>
+                <a th:href="  '/lol/delete?id=' + ${x.id} ">delete</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
